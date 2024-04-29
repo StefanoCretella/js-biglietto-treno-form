@@ -8,8 +8,8 @@ const ageUser = parseInt(prompt('Inserisci la tua età'));
 console.log({ageUser});
 
 /* Prezzi sconti */
-// Salvo prezzo base dei km in una variabile (kmPrice)
-const kmPrice = 0.21;
+// Salvo prezzo base dei km in una variabile (priceKm)
+const priceKm = 0.21;
 
 
 // Imposto variabile che definisce etè minorenni(ageUnder = 18)
@@ -19,12 +19,12 @@ const ageOver = 65;
 
 
 //- setto una variabile discountUnder = 20
-const discountUnder = 20
+const discountUnder = 20;
 //- setto una variabile discountOver = 40
-const discountOver = 40
+const discountOver = 40;
 
 // calcolo il prezzo totale del biglietto 
-let price = kmPrice * kmUser;
+let price = priceKm * kmUser;
 let priceDiscount = 0;
 
 //  console.log({price});
@@ -33,17 +33,17 @@ if (ageUser < ageUnder){
     //cas 1. minorenne
     console.log('utente minorenne, calcolo sconto');
 
-    // price = price - (price / 100 * discountUnder);
+    discount = (price / 100 * discountUnder);
 
-    priceDiscount = (price / 100 * discountUnder);
-}
+    price = price - discount;
 
-else if (ageUnder >= ageOver){
-    console.log('utente over, calcolo sconto');
+} 
 
-    priceDiscount = (price / 100 * discountOver);
+else if (ageUser >= ageOver){
+    console.log('utente maggiorenne, calcolo sconto');
 
     price = price - (price / 100 * discountOver);
+
 }
 
 //price -= priceDiscount;
